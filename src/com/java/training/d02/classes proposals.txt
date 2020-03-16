@@ -1,0 +1,25 @@
+Movie
+CoronaVirus
+Landscape
+Phone
+Tablet
+City
+Country
+Holiday
+Bicycle
+RemoteWork
+Flower
+Food
+Fridge
+Water
+Weather
+
+Exercise creating:
+ - classes with:
+    - fields
+    - constructors
+    - methods
+ - immutable and mutable classes
+ - using 'final' fields and variables
+ - using 'this'
+ - using 'static' - fields, methods and blocks
