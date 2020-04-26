@@ -1,10 +1,6 @@
 package com.java.training.d04.collections;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 public class ListMain {
 
@@ -26,6 +22,14 @@ public class ListMain {
         }
     }
 
+    private static void comparatorExample() {
+        List<Product> products = new ArrayList<>(2);
+        products.add(new Product(3, "Phone"));
+        products.add(new Product(2, "Monitor"));
+
+        Collections.sort(products, new ProductComparator());
+    }
+
     private static void arrayList() {
         List<String> strings = new ArrayList<>(10);
         strings.add("something");
@@ -42,5 +46,13 @@ public class ListMain {
 
         final boolean wasRemoved = strings.remove("first_x");
         System.out.println(wasRemoved);
+    }
+
+    private static class ProductComparator implements Comparator<Product> {
+
+        @Override
+        public int compare(Product o1, Product o2) {
+            return o1.compareTo(o2);
+        }
     }
 }
