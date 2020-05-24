@@ -30,6 +30,7 @@ public class ListMain {
         Collections.sort(products, new ProductComparator());
     }
 
+    @SuppressWarnings("unused")
     private static void arrayList() {
         List<String> strings = new ArrayList<>(10);
         strings.add("something");
@@ -46,6 +47,10 @@ public class ListMain {
 
         final boolean wasRemoved = strings.remove("first_x");
         System.out.println(wasRemoved);
+
+        // examples of a list of lists and a map of lists
+        List<List<String>> lists = new ArrayList<>();
+        List<Map<String, Integer>> maps = new ArrayList<>();
     }
 
     private static class ProductComparator implements Comparator<Product> {
