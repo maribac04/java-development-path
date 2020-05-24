@@ -1,14 +1,19 @@
 package com.java.training.d04.collections;
 
+import java.time.LocalDate;
+
 public class Product implements Comparable<Product> {
 
     private final int id;
 
     private final String name;
 
+    private final LocalDate creationDate;
+
     public Product(int id, String name) {
         this.id = id;
         this.name = name;
+        this.creationDate = LocalDate.now();
     }
 
     public int getId() {
@@ -17,6 +22,10 @@ public class Product implements Comparable<Product> {
 
     public String getName() {
         return name;
+    }
+
+    public LocalDate getCreationDate() {
+        return creationDate;
     }
 
     @Override
