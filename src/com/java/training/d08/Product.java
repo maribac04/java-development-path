@@ -1,7 +1,7 @@
-package com.java.training.d08.strings;
+package com.java.training.d08;
 
 // an immutable Product - can be created, cannot be modified
-public class Product {
+public class Product implements Comparable<Product> {
 
     private final int id;
     private final String name;
@@ -29,5 +29,11 @@ public class Product {
         */
 
         return id + ", " + name;
+    }
+
+    @Override
+    public int compareTo(Product o) {
+        //return name.compareTo(o.getName());
+        return Integer.compare(id, o.getId());
     }
 }

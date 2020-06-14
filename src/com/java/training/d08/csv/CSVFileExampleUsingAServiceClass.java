@@ -1,0 +1,19 @@
+package com.java.training.d08.csv;
+
+import com.java.training.d08.csv.service.CSVFileService;
+import com.java.training.d08.Product;
+
+import java.util.Set;
+
+public class CSVFileExampleUsingAServiceClass {
+
+    public static void main(String[] args) {
+        // the 'service' name will be further detailed
+        CSVFileService csvFileService = new CSVFileService();
+        final Set<String> fileContent = csvFileService.readProductsFromFile("products.csv");
+        final Set<Product> products = csvFileService.convertLinesIntoProducts(fileContent);
+        for (Product product : products) {
+            System.out.println(product);
+        }
+    }
+}
