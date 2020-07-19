@@ -1,10 +1,14 @@
 package com.java.training.d08;
 
-// an immutable Product - can be created, cannot be modified
-public class Product implements Comparable<Product> {
+import java.io.Serializable;
 
-    private final int id;
-    private final String name;
+public class Product implements Comparable<Product>, Serializable {
+
+    private int id;
+    private String name;
+
+    public Product() {
+    }
 
     public Product(int id, String name) {
         this.id = id;
@@ -15,8 +19,16 @@ public class Product implements Comparable<Product> {
         return id;
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public String getName() {
         return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     @Override
