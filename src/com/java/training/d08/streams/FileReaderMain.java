@@ -18,11 +18,13 @@ public class FileReaderMain {
 
         //readingFromTheKeyboard();
 
-        writingToAFile();
+        //writingToAFile();
+
+        //usingTheTwoOutputStreams();
     }
 
     private static void fileReader() {
-        usingTryCatch();
+        //usingTryCatch();
 
         usingTryWithResources();
     }
@@ -50,11 +52,18 @@ public class FileReaderMain {
     }
 
     private static void usingTryWithResources() {
-        try (FileReader fileReader = new FileReader("README.md")){
+        try (FileReader fileReader = new FileReader("README.md");
+             BufferedReader bufferedReader = new BufferedReader(fileReader)) {
+
             char[] buffer = new char[1000];
             fileReader.read(buffer);
             for (char character : buffer) {
                 System.out.print(character);
+            }
+
+            String newLine;
+            while ((newLine = bufferedReader.readLine()) != null) {
+                System.out.println(newLine);
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -120,8 +129,7 @@ public class FileReaderMain {
 
     private static void writingToAFile() {
         //TODO add closing on the fileWriter
-        try {
-            FileWriter fileWriter = new FileWriter("output.txt");
+        try (FileWriter fileWriter = new FileWriter("output.txt")) {
             fileWriter.append("Something");
             fileWriter.append(NEW_LINE);
             fileWriter.append("And some other text to write in the file");
@@ -131,5 +139,10 @@ public class FileReaderMain {
         } catch (IOException ioException) {
             ioException.printStackTrace();
         }
+    }
+
+    private static void usingTheTwoOutputStreams() {
+        System.out.println("Using the standard output stream");
+        System.err.println("Using the standard error stream");
     }
 }
