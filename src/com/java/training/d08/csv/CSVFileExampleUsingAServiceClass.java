@@ -9,6 +9,8 @@ public class CSVFileExampleUsingAServiceClass {
 
     public static void main(String[] args) {
         // the 'service' name will be further detailed
+        // for now - it contains the business logic from a program
+
         CSVFileService csvFileService = new CSVFileService();
         final Set<String> fileContent = csvFileService.readProductsFromFile("products.csv");
         final Set<Product> products = csvFileService.convertLinesIntoProducts(fileContent);
