@@ -1,4 +1,4 @@
-package com.java.training.d09;
+package com.java.training.d09.serializing;
 
 import com.java.training.model.Product;
 
