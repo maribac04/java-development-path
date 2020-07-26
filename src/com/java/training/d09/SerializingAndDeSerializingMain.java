@@ -1,6 +1,6 @@
 package com.java.training.d09;
 
-import com.java.training.d08.Product;
+import com.java.training.model.Product;
 
 import java.io.EOFException;
 import java.io.File;

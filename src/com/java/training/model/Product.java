@@ -1,4 +1,4 @@
-package com.java.training.d08;
+package com.java.training.model;
 
 import java.io.Serializable;
 

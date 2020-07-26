@@ -1,7 +1,7 @@
 package com.java.training.d08.csv;
 
 import com.java.training.d08.csv.service.CSVFileService;
-import com.java.training.d08.Product;
+import com.java.training.model.Product;
 
 import java.util.Set;
 

@@ -1,15 +1,12 @@
 package com.java.training.d09;
 
-import com.java.training.d08.Product;
+import com.java.training.model.Product;
 
 import java.beans.XMLDecoder;
 import java.beans.XMLEncoder;
-import java.io.EOFException;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
 
 public class XMLSerializingAndDeSerializingMain {
 
@@ -43,7 +40,7 @@ public class XMLSerializingAndDeSerializingMain {
 
             Object object;
             do {
-                object= xmlDecoder.readObject();
+                object = xmlDecoder.readObject();
                 if (object instanceof Product) {
                     System.out.println(object);
                 }
